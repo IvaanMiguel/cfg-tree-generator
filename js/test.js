@@ -1,5 +1,5 @@
 (() => {
-  let string = 'i*(i+i)'.replace(/\s/g,'').split('');
+  let string = 'i*i+(i+i)'.replace(/\s/g,'').split('');
 
   function parseE(tokens) {
     const nodeE = new Node('E');
@@ -114,15 +114,27 @@
   const root  = parseE(string);
 
   function generateCoords () {
-    root.y = 60;
-    nodeCoords(root);
+    const details = document.createElement('details');
+    details.innerHTML = /*html*/`
+      <summary>Nodo raíz</summary>
+    `;
+    document.body.appendChild(details);
+    nodeCoords(root, details);
   }
 
-  function nodeCoords (node) {
-    node.children.forEach((child) => {
-      setPositionRelativeToParent(child);
-      nodeCoords(child);
-    });
+  function nodeCoords (node, parentDetails) {
+    const details = document.createElement('details');
+    const text = node.children.length === 0
+      ? `<b>Nodo ${node.value}</b>`
+      : `Nodo ${node.value}`
+
+    details.innerHTML = `
+      <summary>${text}</summary>
+    `;
+
+    parentDetails.appendChild(details);
+
+    node.children.forEach((child) => nodeCoords(child, details));
   }
 
   function setPositionRelativeToParent (node) {

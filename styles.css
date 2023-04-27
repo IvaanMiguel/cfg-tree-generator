@@ -1,3 +1,7 @@
 details {
-  margin-left: 20px;
+  padding-left: 1.5rem;
+}
+
+summary {
+  margin: .5rem;
 }
