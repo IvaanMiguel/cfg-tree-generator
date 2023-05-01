@@ -62,6 +62,8 @@ summary {
   
   margin: var(--summary-line-gap) 0;
   padding: var(--summary-padding);
+  min-width: max-content;
+
   user-select: none;
   cursor: pointer;
   border-radius: 8px;
