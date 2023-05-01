@@ -1,7 +1,51 @@
-details {
-  padding-left: 2rem;
+body {
+  margin: 0;
+  padding: 0;
+  
+  font-family: 'Roboto', sans-serif;
+  font-size: .875rem;
 }
 
-summary {
-  margin: .5rem;
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  width: 50%;
+  margin: 1rem auto;
+}
+
+.input-string {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.input-string span {
+  font-weight: bold;
+}
+
+.input-string input {
+  height: 1.875rem;
+  font-size: .875rem;
+  padding: 0 1rem;
+}
+
+button {
+  margin: auto;
+  cursor: pointer;
+
+  height: 2.5rem;
+  padding: 0 1.5rem;
+  font-size: .875rem;
+  border: none;
+  border-radius: 1.25rem;
+  font-weight: bold;
+}
+
+.tree {
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
 }
