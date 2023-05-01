@@ -1,0 +1,97 @@
+:root {
+  --line-color: rgb(124, 124, 124);
+  --line-width: 2px;
+  --border-style: var(--line-width) dashed var(--line-color);
+
+  /* Espaciado izquierdo que tendrá cada nivel de profundidad. */
+  --details-padding-left: 24px;
+
+  --summary-line-height: 20px;
+  --summary-padding: 8px;
+
+  /* Espaciado que se mostrará entre cada elemento summary y las líneas verticales y horizontales.*/
+  --summary-line-gap: 5px;
+  
+  --arrow-side-length: 5px;
+  --arrow-border-width: 2px;
+
+  /* No cambiar esto. Ya no me acuerdo cómo funciona, pero funciona. */
+  --top-line-position: calc(var(--summary-line-gap) + var(--summary-padding) + calc(var(--summary-line-height) / 2) - calc(var(--line-width) / 2));
+  --left-line-position: calc(var(--summary-padding) + calc(var(--arrow-side-length) / 2) + calc(var(--arrow-border-width) / 2 - 1px) - calc(var(--line-width) / 2));
+  --horizontal-line-width: calc(var(--details-padding-left) - var(--left-line-position) - var(--summary-line-gap));
+}
+
+details {
+  position: relative;
+
+  padding-left: var(--details-padding-left);
+  overflow: auto;
+}
+
+details::before {
+  content: '';
+
+  position: absolute;
+  left: var(--left-line-position);
+
+  border-left: var(--border-style);
+  height: 100%;
+}
+
+details:last-child::before {
+  height: var(--top-line-position);
+}
+
+details::after {
+  content: '';
+
+  position: absolute;
+  top: var(--top-line-position);
+  left: var(--left-line-position);
+
+  border-top: var(--border-style);
+  width: var(--horizontal-line-width);
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  position: relative;
+  
+  margin: var(--summary-line-gap) 0;
+  padding: var(--summary-padding);
+  user-select: none;
+  cursor: pointer;
+  border-radius: 8px;
+  line-height: var(--summary-line-height);
+
+  transition: background-color .1s ease 0s;
+}
+
+summary:has(b) {
+  background-color: rgb(241, 241, 241);
+}
+
+summary:hover {
+  background-color: #B8D1E5;
+}
+
+summary::before {
+  content: '';
+
+  width: var(--arrow-side-length);
+  height: var(--arrow-side-length);
+
+  border: solid black;
+  border-width: 0 var(--arrow-border-width) var(--arrow-border-width) 0;
+  border-radius: 1px;
+
+  display: inline-block;
+  transform: rotate(-45deg);
+}
+
+details[open] > summary::before {
+  transform: rotate(45deg);
+}
