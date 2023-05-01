@@ -1,7 +1,5 @@
 import Node from './Node.class.js';
 
-// let string = 'i*i+(i+i)'.replace(/\s/g,'').split('');
-
 export function parseE(tokens) {
   const nodeE = new Node('E');
   const nodeT = parseT(tokens);
@@ -90,8 +88,6 @@ function parseF(tokens) {
 
   throw new Error('Unexpected token: ' + tokens[0]);
 }
-
-// const root  = parseE(string);
 
 export function generateTree (tree) {
   const details = document.createElement('details');
