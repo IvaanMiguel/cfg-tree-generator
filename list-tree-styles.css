@@ -15,7 +15,7 @@
   --arrow-side-length: 5px;
   --arrow-border-width: 2px;
 
-  /* No cambiar esto. Ya no me acuerdo cómo funciona, pero funciona. */
+  /* No cambiar esto. */
   --top-line-position: calc(var(--summary-line-gap) + var(--summary-padding) + calc(var(--summary-line-height) / 2) - calc(var(--line-width) / 2));
   --left-line-position: calc(var(--summary-padding) + calc(var(--arrow-side-length) / 2) + calc(var(--arrow-border-width) / 2 - 1px) - calc(var(--line-width) / 2));
   --horizontal-line-width: calc(var(--details-padding-left) - var(--left-line-position) - var(--summary-line-gap));
