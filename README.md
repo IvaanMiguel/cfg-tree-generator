@@ -13,4 +13,4 @@ F -> (E) | i
 Valida cadenas y muestra el recorrido realizado en forma de listas desplegables.
 Su funcionalidad es muy limitada, recibe cadenas y las muestra solo si son válidas, caso contrario simplemente no mostrará ningún árbol.
 
-Se necesita de un servidor local para su funcionamiento, como puede ser la extensión [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) para Visual Studio Code.
+Se necesita de un servidor local para su funcionamiento, como puede ser la extensión [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) para [Visual Studio Code](https://code.visualstudio.com/).
